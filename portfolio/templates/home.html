@@ -1,0 +1,51 @@
+{% extends 'layout.html' %} {% block content %} {% load static %}
+
+<header class="row bg-black ">
+  <div class="col-md-4">
+    <img src="{% static 'portfolio/perfil.png' %}" class="img-fluid py-4" />
+  </div>
+
+  <div class="col-md-8 my-auto text-center">
+    <h1>I'm <strong> Armando Tinoco </strong></h1>
+    <h1>Python Developer</h1>
+    <h7>Hi!! and wellcome!!</h7>
+    <p class="text-center">
+      I am a back-end Web Developer with great
+      ability to design and develop timely
+      strategies, I have +3 years experience in Python, Django,
+      JavaScript, AWS and Node js, with
+      knowledge of agile SCRUM
+      methodologies and great analytical
+      skills to solve problems effectively
+    </p>
+    <a
+      class="btn btn-primary btn-sn"
+      href="{% static 'portfolio/CV_ATP.pdf' %}"
+      target="_blanc"
+      >Download Cv</a
+    >
+  </div>
+</header>
+
+<div class="row my-4 text-center">
+  <h3>My Projects</h3>
+
+  {% for project in projects %}
+  <div class="col-md-4 p-4">
+    <div class="card bg-black card-project">
+      <div class="card-body">
+        <img
+          src="{{project.image.url}}"
+          alt="{{project.title}}"
+          class="img-fluid"
+        />
+        <h2>{{project.title}}</h2>
+        <p>{{project.description}}</p>
+        {% if project.url %}
+        <a href="{{project.url}}" class="btn btn-dark rounded-0 btn-sm">{{project.url}}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% endfor %} {% endblock %}
+</div>

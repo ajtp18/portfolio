@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="my-4">
+    <h1> {{post.title}}</h1>
+    <l1 class="text muted">{{post.date|date:'F jS Y'}}</li>
+    <p>{{post.description}}</p>
+</div>
+
+<div class="my-4">
+    <img src="{{post.image.url}}" alt="{{post.title}}" class="img-fluid" />
+</div>
+
+{% endblock  %}
+
